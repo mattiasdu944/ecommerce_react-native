@@ -1,4 +1,3 @@
-import { StyleProps } from "react-native-reanimated"
 import { StyleSheet } from 'react-native';
 
 export const COLORS = {
@@ -10,8 +9,19 @@ export const COLORS = {
 
 export const TYPOGRAPHY = StyleSheet.create({
     title1:{
-        fontSize: 18,
+        fontSize: 20,
+        fontWeight: "900",
+    },
+    subtitle1:{
+        fontSize: 16,
         fontWeight: "700",
+        color: COLORS.text.light,
+
+    },
+    text: {
+        fontSize: 14,
+        color: COLORS.text.light,
+        textAlign:'justify'
     }
 })
 
@@ -26,19 +36,29 @@ export const GLOBALS = StyleSheet.create({
 
     productCard:{
         width:'100%',
-        maxWidth:165,
+        maxWidth:175,
         borderWidth:1,
         borderColor:'rgba(0,0,0,0.1)',
-        paddingHorizontal: 30,
-        paddingVertical: 20,
+        padding: 20,
         borderRadius:20,
-        alignItems:'center'
 
     },
 
     productCardImage:{
         width:'100%',
-        height: 100,
+        height: 125,
+    },
+
+    productTitle: {
+        fontWeight:'bold',
+        marginBottom:5,
+        fontSize:16
+    },
+
+    productSubTutle: {
+        fontWeight:'bold',
+        color:'rgba(0,0,0,0.5)',
+        marginBottom:10
     },
 
     categoryCard: {
@@ -49,12 +69,34 @@ export const GLOBALS = StyleSheet.create({
         overflow:'hidden',
         columnGap: 30,
         padding:20,
-        maxWidth:300,
+        width:350,
         alignItems:'center',
     },
     categoryCardTitle: {
         fontSize:20,
         fontWeight:'900',
         maxWidth:'50%'
+    },
+
+    productImage: {
+        width: '100%',
+        height: 350,
+        borderWidth:1,
+        borderColor:'rgba(0,0,0,.1)',
+        borderRadius: 30,
+        justifyContent:'center',
+        alignItems:'center',
+        marginBottom: 20,
+    },
+
+    button: {
+        paddingVertical: 15,
+        backgroundColor: COLORS.primary,
+        borderRadius: 20,
+    },
+
+    buttonText: {
+        textAlign:'center',
+        color:'white'
     },
 })

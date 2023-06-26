@@ -19,7 +19,7 @@ export const ProductList = () => {
         <View style={ GLOBALS.productContainer }>
 
             {
-                products.map(product => (
+                products?.map(product => (
                     <ProductCard  key={ product.id } product={ product }/>
                 ))
             }

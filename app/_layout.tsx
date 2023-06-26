@@ -24,7 +24,7 @@ export default function RootLayout() {
         headerTitleAlign: 'center',
         sceneContainerStyle:{
           backgroundColor:'#fff',
-          marginHorizontal:15
+          marginHorizontal:15,
         },
 
       }}
@@ -32,9 +32,13 @@ export default function RootLayout() {
         {
           MENU_OPTIONS.map(option => (
             <Drawer.Screen
-            key={option.name}
+              key={option.name}
               name={option.name} // This is the name of the page and must match the url from root
+              
               options={{
+                drawerItemStyle:{
+                  display: option.display,
+                },
                 title: option.title,
                 drawerLabel:({ focused }) => <Text style={{ color: focused ? 'white': COLORS.text.light  }}>{option.title}</Text>,
                 drawerActiveBackgroundColor: COLORS.primary,

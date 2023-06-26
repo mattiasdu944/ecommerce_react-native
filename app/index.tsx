@@ -7,7 +7,7 @@ export default function Page() {
 
 
     return (
-        <ScrollView style={{ flex:1 }}>
+        <ScrollView style={{ flex:1 }} showsVerticalScrollIndicator={ false }>
             <SearchInput/>
             <Text style={{...TYPOGRAPHY.title1, marginBottom:10 }}>Categorias</Text>
             <CategoryList/>

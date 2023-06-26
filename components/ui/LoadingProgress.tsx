@@ -1,10 +1,11 @@
 import React from 'react'
 import { ActivityIndicator, View } from 'react-native';
+import { COLORS } from '../../theme';
 
 export const LoadingProgress = () => {
     return (
-        <View>
-            <ActivityIndicator/>
+        <View style={{ flex:1, justifyContent:'center' }}>
+            <ActivityIndicator size={50} color={COLORS.primary}/>
         </View>
     )
 }

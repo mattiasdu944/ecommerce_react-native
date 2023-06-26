@@ -1,11 +1,17 @@
 import { useState } from 'react'
-import { View, StyleSheet } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { useRouter } from 'expo-router';
+import { View, StyleSheet, TextInput } from 'react-native';
+
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 export const SearchInput = () => {
 
     const [search, setSearch] = useState('')
+    const router = useRouter();
+
+    const hanleSearch = () => {
+        router.push({ pathname:`/search/${ search }` })
+    }
 
     return (
         <View
@@ -17,7 +23,7 @@ export const SearchInput = () => {
                 value={ search }
                 onChangeText={setSearch}
             />
-            <Ionicons name='search-outline' size={22}/>
+            <Ionicons name='search-outline' size={22} onPress={hanleSearch}/>
         </View>
 
     )

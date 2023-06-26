@@ -5,7 +5,7 @@ import axios from "axios";
 
 export const useFetch = ( url: string ) => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(false);
 
     const showToast = (message: string) => {

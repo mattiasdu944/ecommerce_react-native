@@ -1,2 +1,7 @@
-export * from './CategoryCard' 
-export * from './CategoryList' 
+import { CategoryCard } from "./CategoryCard";
+import { CategoryList } from "./CategoryList";
+
+export {
+    CategoryCard,
+    CategoryList
+}
