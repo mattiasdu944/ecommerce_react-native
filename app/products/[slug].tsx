@@ -1,15 +1,12 @@
-import React from 'react'
-import { ScrollView, Text, View } from 'react-native';
+import { useState } from 'react';
 import { useLocalSearchParams } from "expo-router";
-import { Drawer } from '../../Drawer';
-import { Product } from '../../interfaces/product';
-import { LoadingProgress, ProductBanner, ProductImageCard } from '../../components';
+import { ScrollView, Text, View, FlatList } from 'react-native';
 import { useFetch } from '../../hooks';
-import { FlatList } from 'react-native-gesture-handler';
-import { useState, useEffect } from 'react';
-import { GLOBALS, TYPOGRAPHY } from '../../theme';
-import { CustomButton } from '../../components/ui/CustomButton';
-import Ionicons from '@expo/vector-icons/Ionicons';
+
+import { Drawer } from '../../Drawer';
+import { Product } from '../../interfaces';
+import { TYPOGRAPHY } from '../../theme';
+import { LoadingProgress, ProductBanner, ProductImageCard, CustomButton } from '../../components';
 
 const ProductScreen = () => {
     const {slug} = useLocalSearchParams();

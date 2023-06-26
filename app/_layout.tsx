@@ -1,8 +1,7 @@
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { Drawer } from "../Drawer";
 
 import { COLORS } from "../theme";
-import { MENU_OPTIONS } from "../constants/menu";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function RootLayout() {
@@ -29,27 +28,58 @@ export default function RootLayout() {
 
       }}
     >
-        {
-          MENU_OPTIONS.map(option => (
-            <Drawer.Screen
-              key={option.name}
-              name={option.name} // This is the name of the page and must match the url from root
-              
-              options={{
-                drawerItemStyle:{
-                  display: option.display,
-                },
-                title: option.title,
-                drawerLabel:({ focused }) => <Text style={{ color: focused ? 'white': COLORS.text.light  }}>{option.title}</Text>,
-                drawerActiveBackgroundColor: COLORS.primary,
-                drawerIcon: ({ focused }) => <Ionicons color={focused ? 'white': COLORS.text.light} size={20} name={ focused ? option.icon : `${option.icon}-outline` as any }/>
-              }}
-            />
-
-          ))
-
-        }
-
+      <Drawer.Screen
+        name='index' // This is the name of the page and must match the url from root
+        options={{
+          drawerItemStyle:{
+            display: 'flex',
+            paddingHorizontal:10,
+            borderRadius:10
+          },
+          title: "Productos",
+          drawerLabel:({ focused }) => <Text style={{ color: focused ? 'white': COLORS.text.light  }}>Productos</Text>,
+          drawerIcon: ({ focused }) => <Ionicons color={focused ? 'white': COLORS.text.light} size={20} name={ focused ? 'home' : `home-outline` as any }/>,
+          drawerActiveBackgroundColor: COLORS.primary,
+        }}
+      />
+      <Drawer.Screen
+        name='favorites/index' // This is the name of the page and must match the url from root
+        options={{
+          drawerItemStyle:{
+            display: 'flex',
+            paddingHorizontal:10,
+            borderRadius:10
+          },
+          title: "Productos",
+          drawerLabel:({ focused }) => <Text style={{ color: focused ? 'white': COLORS.text.light  }}>Productos</Text>,
+          drawerIcon: ({ focused }) => <Ionicons color={focused ? 'white': COLORS.text.light} size={20} name={ focused ? 'cart' : `cart-outline` as any }/>,
+          drawerActiveBackgroundColor: COLORS.primary,
+        }}
+      />
+      <Drawer.Screen
+        name='products/[slug]' // This is the name of the page and must match the url from root
+        options={{
+          drawerItemStyle:{
+            display: 'none',
+          },
+          title: "Productos",
+          drawerLabel:({ focused }) => <Text style={{ color: focused ? 'white': COLORS.text.light  }}>Productos</Text>,
+          drawerIcon: ({ focused }) => <Ionicons color={focused ? 'white': COLORS.text.light} size={20} name={ focused ? 'home' : `home-outline` as any }/>,
+          drawerActiveBackgroundColor: COLORS.primary,
+        }}
+      />
+      <Drawer.Screen
+        name='search/[search]' // This is the name of the page and must match the url from root
+        options={{
+          drawerItemStyle:{
+            display: 'none',
+          },
+          title: "Productos",
+          drawerLabel:({ focused }) => <Text style={{ color: focused ? 'white': COLORS.text.light  }}>Productos</Text>,
+          drawerIcon: ({ focused }) => <Ionicons color={focused ? 'white': COLORS.text.light} size={20} name={ focused ? 'home' : `home-outline` as any }/>,
+          drawerActiveBackgroundColor: COLORS.primary,
+        }}
+      />
     </Drawer>
   );
 }

@@ -27,8 +27,8 @@ export const MENU_OPTIONS: MenuOption[] = [
     },
     {
         icon: 'cart',
-        name: 'search/[search]',
+        name: 'products/search/[query]',
         title:'Producto',
-        display: 'none'
+        display: 'flex'
     },
 ] 

@@ -15,7 +15,7 @@ export const ProductCard = ({ product }: Props) => {
     
     const handleNavigate = () => {
         router.push({ 
-            pathname: `/products/${product.slug}`, 
+            pathname: `/products/${ product.slug }`, 
         })
     }
 
