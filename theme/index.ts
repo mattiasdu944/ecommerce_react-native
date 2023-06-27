@@ -99,4 +99,26 @@ export const GLOBALS = StyleSheet.create({
         textAlign:'center',
         color:'white'
     },
+
+    cartItem: {
+        flexDirection: 'row',
+        marginBottom: 40,
+        gap:20,
+        overflow: 'hidden',
+        borderWidth:1,
+        borderRadius: 10,
+        borderColor:'rgba(0,0,0,.1)',
+        paddingVertical:20
+    },
+    cartButtons: {
+        flexDirection: 'row',
+        columnGap: 20
+    },
+    cartButton: {
+        backgroundColor: COLORS.primary,
+        color:'#fff',
+        fontSize: 15,
+        borderRadius: 10,
+        padding:5
+    }
 })

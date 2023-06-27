@@ -4,13 +4,20 @@ import { GLOBALS } from '../../theme';
 
 interface Props {
     text: string;
+    onPress: () => void;
 }
 
-export const CustomButton = ({ text }: Props) => {
+export const CustomButton = ({ text, onPress }: Props) => {
+
+    const dispatchFunction = () => {
+        onPress();
+    }
+
     return (
         <TouchableOpacity
             activeOpacity={0.95}
             style={ GLOBALS.button }
+            onPress={ dispatchFunction }
         >
             <Text style={ GLOBALS.buttonText }>
                 { text }

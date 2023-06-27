@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useLocalSearchParams } from "expo-router";
 import { ScrollView, Text, View, FlatList } from 'react-native';
 import { useFetch } from '../../hooks';
@@ -7,11 +7,14 @@ import { Drawer } from '../../Drawer';
 import { Product } from '../../interfaces';
 import { TYPOGRAPHY } from '../../theme';
 import { LoadingProgress, ProductBanner, ProductImageCard, CustomButton } from '../../components';
+import { CartContext } from '../../context/cart/CartContext';
 
 const ProductScreen = () => {
     const {slug} = useLocalSearchParams();
     const { data: product, isLoading }: { data: Product, isLoading: boolean } = useFetch(`/products/${ slug }`);
     
+    const { addProductsToCart } = useContext(CartContext);
+
     const [imageUrl, setImageUrl] = useState('')
 
     if( isLoading ){
@@ -45,7 +48,7 @@ const ProductScreen = () => {
             <Text style={{...TYPOGRAPHY.text, marginBottom: 20 }}>{ product?.description }</Text>
 
             <View style={{ marginBottom:20 }}>
-                <CustomButton text={'Agregar al carrito'}/>
+                <CustomButton onPress={  () => addProductsToCart(product)  } text={'Agregar al carrito'}/>
             </View>
 
         </ScrollView>

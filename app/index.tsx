@@ -5,7 +5,6 @@ import { SearchInput, ProductList, CategoryList } from "../components";
 
 export default function Page() {
 
-
     return (
         <ScrollView style={{ flex:1 }} showsVerticalScrollIndicator={ false }>
             <SearchInput/>
